@@ -2,7 +2,6 @@
 <html>
   <head>
     <title>Harper</title>
-    <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
     <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
     <script src="/moment.min.js"></script>
@@ -43,6 +42,59 @@
       });
 
     </script>
+
+    <style type="text/css">
+      html, body {
+        text-align: center;
+        height: 100%;
+        background-color: #ffedef;
+      }
+
+      * {
+        color: #fff;
+      }
+
+      .background {
+        width: 100%;
+        height: 100%;
+        position: fixed;
+        top: 0;
+        left: 0;
+        opacity: .75;
+        background-image: url('girl.jpg');
+        background-color: #ffedef;
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: center;
+
+        -webkit-filter: blur(5px);
+        -moz-filter: blur(5px);
+        -o-filter: blur(5px);
+        -ms-filter: blur(5px);
+        filter: blur(5px) ;
+      }
+
+      #clock {
+        display: inline-block;
+        text-align: center;
+        margin: 0 auto;
+        position: relative;
+        top: 50%;
+        text-shadow: 0px 0px 5px rgba(0, 0, 0, 1);
+        transform: translateY(-50%);
+      }
+
+      #clock h2 {
+        margin-bottom: 2px;
+        font-size: 300%;
+      }
+
+      #clock h3 {
+        margin-top: 0;
+        margin-bottom: 40px;
+        color: #fff;
+      }
+    </style>
 
     <meta name="viewport" content="width=device-width, initial-scale=1">
   </head>
