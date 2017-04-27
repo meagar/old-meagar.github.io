@@ -1,1 +1,89 @@
-<h1>hello2</h1>
+<!doctype html>
+<html>
+  <head>
+    <title>Harper</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+    <script src="/moment.min.js"></script>
+
+    <script>
+      $(function () {
+        var target = moment({year: 2017, month: 8, day: 3, hour: 0, minute: 0, second: 0});
+
+        updateClock = function () {
+          var diff, weeks, days, hours, minutes, seconds;
+          var endDate = target.clone();
+          var now = moment();
+
+          diff = endDate.diff(now, 'milliseconds', true);
+          weeks = Math.floor(moment.duration(diff).asWeeks());
+
+          diff = endDate.subtract('weeks', weeks).diff(now, 'milliseconds', true);
+          days = Math.floor(moment.duration(diff).asDays());
+
+          diff = endDate.subtract('days', days).diff(now, 'milliseconds', true);
+          hours = Math.floor(moment.duration(diff).asHours());
+
+          diff = endDate.subtract('hours', hours).diff(now, 'milliseconds', true);
+          minutes = Math.floor(moment.duration(diff).asMinutes());
+
+          diff = endDate.subtract('minutes', minutes).diff(now, 'milliseconds', true);
+          seconds = Math.floor(moment.duration(diff).asSeconds());
+
+          $('#clock').find('.weeks').text(weeks);
+          $('#clock').find('.days').text(days);
+          $('#clock').find('.hours').text(hours);
+          $('#clock').find('.minutes').text(minutes);
+          $('#clock').find('.seconds').text(seconds)
+        };
+
+        window.setInterval(updateClock, 1000);
+        updateClock();
+      });
+
+    </script>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+  </head>
+
+  <body>
+    <div class="background">
+    </div>
+    <div id="clock" class="container">
+      <div class="row">
+        <div class="col-md-1"></div>
+
+        <div class="col-md-2 col-sm-2">
+          <h2 class="weeks"></h2>
+          <h3>Weeks</h3>
+        </div>
+
+        <div class="col-md-2 col-sm-2">
+          <h2 class="days"></h2>
+          <h3>Days</h3>
+        </div>
+
+        <div class="col-md-2 col-sm-2">
+          <h2 class="hours"></h2>
+          <h3>Hours</h3>
+        </div>
+
+        <div class="col-md-2 col-sm-2">
+          <h2 class="minutes"></h2>
+          <h3>Minutes</h3>
+        </div>
+
+        <div class="col-md-2 col-sm-2">
+          <h2 class="seconds"></h2>
+          <h3>Seconds</h3>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-12 col-sm-12 centered">
+          <h3>September 3, 2017</h3>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
